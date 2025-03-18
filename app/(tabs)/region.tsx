@@ -2,12 +2,12 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import Main from '@/components/Main'
 
-const profile = () => {
+const region = () => {
   return (
     <Main>
-      <Text>profile</Text>
+      <Text>region</Text>
     </Main>
   )
 }
 
-export default profile
+export default region
