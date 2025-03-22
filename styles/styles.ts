@@ -10,6 +10,15 @@ const Styles = StyleSheet.create({
     },
     gradienBox:{
         flex:1,
+    },
+    bordure:{
+        borderWidth:1,
+        marginTop:10,
+    },
+    btn:{
+        backgroundColor:'red',
+        marginTop:10,
+
     }
 
 

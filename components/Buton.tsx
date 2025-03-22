@@ -7,9 +7,9 @@ interface btnProps{
     children: ReactNode;
 }
 
-const Button  = ({children}:btnProps) => {
+const Buton  = ({children}:btnProps) => {
   return <Pressable style={Styles.btn}>{children}</Pressable>
   
 }
 
-export default Button
+export default Buton
