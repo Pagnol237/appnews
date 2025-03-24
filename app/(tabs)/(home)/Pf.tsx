@@ -2,13 +2,13 @@ import { View, Text,StyleSheet } from 'react-native'
 import React from 'react'
 
 interface PfInterface{
-    color:string,
+    couleur:string,
     setCouleur: React.Dispatch<React.SetStateAction<string>>;
 }
-const Pf:React.FC<PfInterface> = ({color,setCouleur}) => {
+const Pf:React.FC<PfInterface> = ({couleur,setCouleur}) => {
   return (
-    <View style={{backgroundColor:color}}>
-      <Text>Pf{color}</Text>
+    <View style={{backgroundColor:couleur}}>
+      <Text>Pf{couleur}</Text>
     </View>
   )
 }

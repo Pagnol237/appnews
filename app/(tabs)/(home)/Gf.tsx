@@ -3,15 +3,15 @@ import React from 'react'
 import Pf from './Pf'
 
 interface colorInterface{
-    color:string,
+    couleur:string,
     setCouleur: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Gf:React.FC<colorInterface> = ({color,setCouleur}) => {
+const Gf:React.FC<colorInterface> = ({couleur,setCouleur}) => {
   return (
     <View style={Styles.box}>
       <Text>Gf</Text>
-      <Pf color={color} setCouleur={setCouleur}/>
+      <Pf couleur={couleur} setCouleur={setCouleur}/>
     </View>
   )
 }
