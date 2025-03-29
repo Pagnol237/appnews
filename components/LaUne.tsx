@@ -4,20 +4,29 @@ import Styles from '@/styles/styles'
 import axios from 'axios'
 import { LinearGradient } from 'expo-linear-gradient'
 import ItemsBox from './ItemsBox'
+import Animated from 'react-native-reanimated' 
+import 'react-native-gesture-handler'
+import { MotiView, MotiText } from 'moti'
+
+
+
 
 interface Article {
     title: string;
     description: string;
     urlToImage: string;
+    publishedAt:string;
+    author:string;
+    index:number;
   }
   
 const LaUne = () => {
 
     const [data,setData]= useState<Article[]>([]);
-    const [loading,setLoading]= useState(true);
+    const [loading,setLoading]= useState(false);
 
     useEffect(()=>{
-        axios.get(' https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=d8025036755846d28411653765930cab')
+        axios.get(' https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=d8025036755846d28411653765930cab')
         .then((response)=>{
             setData(response.data.articles);
             setLoading(false);
@@ -46,15 +55,33 @@ const LaUne = () => {
                         <Image source={{uri:items.urlToImage}} style={{width:imageWidth, height:imageWidth*0.7}} />
                         </View>
                         :
-                        <ItemsBox urlToImage= {items.urlToImage} 
-                                  title={items.title}
-                        />
+                        <MotiView
+                            from={{
+                            translateY: -80,
+                            opacity:0,
+                            }}
+                            animate={{
+                            translateY: 0,
+                            opacity:1,
+                            }}
+                            transition={{
+                            repeatReverse: false,
+                            type: 'timing',
+                            duration: 800,
+                            }}>
+                                                    
+                            <ItemsBox urlToImage= {items.urlToImage} 
+                                    title={items.title}
+                                    publishedAt={items.publishedAt}
+                                    category={items.author}
+                                    index={items.index}
+                            />
+                        </MotiView>
                     }
                     
                 </View>
             )
         })}
-      <Text>LaUne</Text>
     </ScrollView>
   )
 }

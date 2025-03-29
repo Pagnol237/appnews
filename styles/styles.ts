@@ -96,7 +96,8 @@ const Styles = StyleSheet.create({
         //borderWidth:2,
         display:'flex',
         flexDirection:'row',
-        marginBottom:10
+        marginBottom:20,
+
         
     },
     itemsListBoxLeft:{
@@ -112,6 +113,20 @@ const Styles = StyleSheet.create({
     itemsListBoxRight:{
          width:'65%',
         paddingLeft:10,
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-between',
+       
+    },
+
+    TitleUneText:{
+        textAlign:'justify',
+        fontWeight:600,
+    },
+    DateAnIconContainer:{   
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-between'
     },
 
 
