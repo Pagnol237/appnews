@@ -1,10 +1,11 @@
-import { View, Text,Dimensions,Image } from 'react-native'
+import { View, Text,Dimensions,Image,Pressable } from 'react-native'
 import React from 'react'
 import Main from '@/components/Main'
 import Styles from '@/styles/styles'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Categorie from '@/components/Categorie';
 import LaUne from '@/components/LaUne';
+
 
 // api key  d8025036755846d28411653765930cab
 

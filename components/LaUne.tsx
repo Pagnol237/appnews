@@ -1,4 +1,4 @@
-import { View, Text,ScrollView,Dimensions,Image} from 'react-native'
+import { View, Text,ScrollView,Dimensions,Image,Pressable} from 'react-native'
 import React,{useEffect,useState} from 'react'
 import Styles from '@/styles/styles'
 import axios from 'axios'
@@ -7,6 +7,7 @@ import ItemsBox from './ItemsBox'
 import Animated from 'react-native-reanimated' 
 import 'react-native-gesture-handler'
 import { MotiView, MotiText } from 'moti'
+import { Link,useRouter } from 'expo-router'
 
 
 
@@ -21,6 +22,7 @@ interface Article {
   }
   
 const LaUne = () => {
+    const router = useRouter();
 
     const [data,setData]= useState<Article[]>([]);
     const [loading,setLoading]= useState(false);
@@ -48,12 +50,14 @@ const LaUne = () => {
             return(
                 <View key={index}>
                     {index===0?
-                        <View style={{ overflow:'hidden',borderRadius:17,marginBottom:20}}>
-                            <LinearGradient colors={[ 'rgba(0, 0, 0, 0.05)','rgb(0, 0, 0)']} style={Styles.LinearGradient}> 
-                                <Text style={Styles.BigTitle}>{items.title}</Text>
-                            </LinearGradient>
-                        <Image source={{uri:items.urlToImage}} style={{width:imageWidth, height:imageWidth*0.7}} />
-                        </View>
+                        <Pressable onPress={()=>router.navigate('/(tabs)/(home)/Read')} >  
+                            <View style={{ overflow:'hidden',borderRadius:17,marginBottom:50}}>
+                                <LinearGradient colors={[ 'rgba(0, 0, 0, 0.05)','rgb(0, 0, 0)']} style={Styles.LinearGradient}> 
+                                    <Text style={Styles.BigTitle}>{items.title}</Text>
+                                </LinearGradient>
+                                <Image source={{uri:items.urlToImage}} style={{width:imageWidth, height:imageWidth*0.7}} />
+                            </View>
+                        </Pressable> 
                         :
                         <MotiView
                             from={{
@@ -69,13 +73,25 @@ const LaUne = () => {
                             type: 'timing',
                             duration: 800,
                             }}>
-                                                    
-                            <ItemsBox urlToImage= {items.urlToImage} 
-                                    title={items.title}
-                                    publishedAt={items.publishedAt}
-                                    category={items.author}
-                                    index={items.index}
-                            />
+
+                            <Pressable onPress={()=>router.navigate({
+                                pathname:'/(tabs)/(home)/Read',
+                                params:{
+                                    urlToImage: items.urlToImage,
+                                    title:items.title,
+                                    publishedAt:items.publishedAt,
+                                    category:items.author,
+                                    index:items.index,
+                                }
+                            })} >         
+                                <ItemsBox urlToImage= {items.urlToImage} 
+                                        title={items.title}
+                                        publishedAt={items.publishedAt}
+                                        category={items.author}
+                                        index={items.index}
+                                />
+                           </Pressable>  
+                            
                         </MotiView>
                     }
                     

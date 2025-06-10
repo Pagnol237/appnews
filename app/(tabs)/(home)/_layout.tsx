@@ -11,6 +11,12 @@ export default function root (){
                 title:"home",
                 headerShown:false,
             }}/>
+            <Stack.Screen name = "Read" options = {{
+                title:"Read",
+                headerShown:false,
+            }}/>
+
+            
         </Stack>
     )
 }
