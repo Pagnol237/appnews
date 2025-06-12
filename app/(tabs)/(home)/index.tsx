@@ -1,4 +1,4 @@
-import { View, Text,Dimensions,Image,Pressable } from 'react-native'
+import { View, Text,Dimensions,Image,Pressable,SafeAreaView} from 'react-native'
 import React from 'react'
 import Main from '@/components/Main'
 import Styles from '@/styles/styles'
@@ -12,6 +12,7 @@ import LaUne from '@/components/LaUne';
 const index = () => {
   const windowwidth  = Dimensions.get('window').width;
   return (
+   
       <Main>
         {/* heaher qui contien le logo de l'appli , l'icône de la recherche et des réglages*/}
         <View style={Styles.headerBox}>
@@ -33,6 +34,7 @@ const index = () => {
      
        
       </Main>
+ 
  
   )
 }

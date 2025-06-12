@@ -50,7 +50,18 @@ const LaUne = () => {
             return(
                 <View key={index}>
                     {index===0?
-                        <Pressable onPress={()=>router.navigate('/(tabs)/(home)/Read')} >  
+                        
+                        <Pressable onPress={()=>router.navigate({
+                            pathname:'/(tabs)/(home)/Read',
+                            params:{
+                                urlToImage: items.urlToImage,
+                                title:items.title,
+                                publishedAt:items.publishedAt,
+                                category:items.author,
+                                index:index,
+                            }
+                        })} 
+                        >   
                             <View style={{ overflow:'hidden',borderRadius:17,marginBottom:50}}>
                                 <LinearGradient colors={[ 'rgba(0, 0, 0, 0.05)','rgb(0, 0, 0)']} style={Styles.LinearGradient}> 
                                     <Text style={Styles.BigTitle}>{items.title}</Text>
@@ -81,14 +92,14 @@ const LaUne = () => {
                                     title:items.title,
                                     publishedAt:items.publishedAt,
                                     category:items.author,
-                                    index:items.index,
+                                    index:index,
                                 }
                             })} >         
                                 <ItemsBox urlToImage= {items.urlToImage} 
                                         title={items.title}
                                         publishedAt={items.publishedAt}
                                         category={items.author}
-                                        index={items.index}
+                                        index={index}
                                 />
                            </Pressable>  
                             
