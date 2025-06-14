@@ -7,6 +7,10 @@ import StylesR from '@/styles/readStyle'
 import Styles from '@/styles/styles'
 import Feather from '@expo/vector-icons/Feather';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import Fontisto from '@expo/vector-icons/Fontisto';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 
 
@@ -36,12 +40,12 @@ const Read:React.FC<infoInterface> = () => {
             <View style={StylesR.bigImageContainerTopIconContainer} >
                 <View>
                   <Link href="/(tabs)/(home)">
-                    <Feather name="arrow-left-circle" size={24} color="white" />
+                    <Feather name="arrow-left-circle" size={34} color="white" />
                   </Link>
                 </View>
                 <View style={{display:'flex',flexDirection:'row'}}>
-                  <Ionicons name="heart-outline" size={24} color="white" />
-                  <Ionicons name="bookmark-outline" size={24} color="white" />
+                  <Ionicons name="heart-outline" size={34} color="white" />
+                  <Ionicons name="bookmark-outline" size={34} color="white" />
                 </View>
             </View>
             <Image source={{uri:urlToImage as string}}  style={{width:imageWidth, height:imageWidth*0.8,zIndex:1}}/>
@@ -50,9 +54,16 @@ const Read:React.FC<infoInterface> = () => {
             </LinearGradient>
         </View>
 
-
-                    <Link href="/(tabs)/(home)"><Text>back</Text></Link> 
-            <Text> le titre est : {somme}</Text>
+        <View style={StylesR.articleTextContainer}>
+          <View style={StylesR.socialMediaContainer}>
+              <View style={StylesR.icon}><Fontisto name="facebook" size={20} color="black" /></View>
+              <View style={StylesR.icon}><AntDesign name="twitter" size={20} color="black" /></View>
+              <View style={StylesR.icon}><MaterialIcons name="email" size={20} color="black" /></View>
+              <View style={StylesR.icon}><MaterialCommunityIcons name="share" size={20} color="black" /></View>
+              
+          </View>
+          <Text>okay</Text>
+        </View>
 
       </ScrollView>
     </SafeAreaView>

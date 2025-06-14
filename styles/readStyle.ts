@@ -23,13 +23,42 @@ const StylesR = StyleSheet.create({
         LinearGradientR:{
         zIndex:1, 
         position:'absolute',
-        bottom:1,
+        bottom:0,
         width:'100%', 
         paddingTop:0,
         paddingBottom:30,
         paddingLeft:20,
         paddingRight:20,
     },
+
+    articleTextContainer:{
+        backgroundColor:'#ffffff',
+        paddingLeft:20,
+        paddingRight:20,
+        position:'relative',
+        paddingTop:50
+    },
+    socialMediaContainer:{
+        display:'flex',
+        flexDirection:'row',
+        position:'absolute',
+        top:-10,
+        left:20
+
+    },
+    icon:{
+        backgroundColor:'#f1efef',
+        width:45,
+        height:45,
+        marginRight:5,
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        padding:5,
+        borderRadius:50,
+        borderWidth:3,
+        borderColor:'white',
+    }
 
 })
 
