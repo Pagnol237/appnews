@@ -11,6 +11,7 @@ interface infoInterface{
     title: string;
     publishedAt: string;
     category: string;
+    description: string;
     index: number;
 }
 

@@ -2,10 +2,11 @@ import { View, Text,Image,ScrollView,Pressable} from 'react-native'
 import React ,{useState}from 'react'
 import Data from './dataCategorie'
 import Styles from '@/styles/styles'
+import { useSelectedBox } from '@/context/SelectedBoxContext'
 
 
 const Categorie = () => {
-    const [selectedBox, setSelectedBox]= useState<number|null>(0);
+    const {selectedBox, setSelectedBox}= useSelectedBox();
   return (
     <ScrollView horizontal  showsHorizontalScrollIndicator={false} style={Styles.categoriBox}>
         {Data.map((item, index) => (

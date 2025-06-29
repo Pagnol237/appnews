@@ -5,14 +5,27 @@ import Styles from '@/styles/styles'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Categorie from '@/components/Categorie';
 import LaUne from '@/components/LaUne';
-
+import { SelectedBoxContextProvider,useSelectedBox } from '@/context/SelectedBoxContext';
+import International from '@/components/International';
+import Economie from '@/components/Economie';
+import Sport from '@/components/Sport';
 
 // api key  d8025036755846d28411653765930cab
+
+const Display = ()=>{
+  const {selectedBox}= useSelectedBox();
+    return(
+    <>
+      {selectedBox === 0 ? <LaUne/>: selectedBox === 1 ? <International/> : selectedBox === 3?<Economie/>:selectedBox=== 6? <Sport/> : <LaUne/>}
+      <Text>{selectedBox }</Text>
+    </>)
+}
 
 const index = () => {
   const windowwidth  = Dimensions.get('window').width;
   return (
    
+    <SelectedBoxContextProvider>
       <Main>
         {/* heaher qui contien le logo de l'appli , l'icône de la recherche et des réglages*/}
         <View style={Styles.headerBox}>
@@ -29,11 +42,12 @@ const index = () => {
        {/* composant qui comporte les difféerente catégorie d'infoemation*/}
         <View style={{display:'flex',flexDirection:'column',flex:1}}>
           <Categorie/>
-          <LaUne/>
+          <Display/>
         </View>
      
        
       </Main>
+    </SelectedBoxContextProvider>
  
  
   )

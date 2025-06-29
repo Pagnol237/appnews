@@ -1,3 +1,4 @@
+
 import { View, Text,ScrollView,Dimensions,Image,Pressable} from 'react-native'
 import React,{useEffect,useState} from 'react'
 import Styles from '@/styles/styles'
@@ -22,14 +23,14 @@ interface Article {
     content:string;
   }
   
-const LaUne = () => {
+const Sport = () => {
     const router = useRouter();
 
     const [data,setData]= useState<Article[]>([]);
     const [loading,setLoading]= useState(false);
 
     useEffect(()=>{
-        axios.get(' https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=d8025036755846d28411653765930cab')
+        axios.get(' https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=d8025036755846d28411653765930cab')
         .then((response)=>{
             setData(response.data.articles);
             setLoading(false);
@@ -119,4 +120,4 @@ const LaUne = () => {
   )
 }
 
-export default LaUne
+export default Sport
