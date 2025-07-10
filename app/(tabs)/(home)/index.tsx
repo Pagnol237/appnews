@@ -17,7 +17,6 @@ const Display = ()=>{
     return(
     <>
       {selectedBox === 0 ? <LaUne/>: selectedBox === 1 ? <International/> : selectedBox === 3?<Economie/>:selectedBox=== 6? <Sport/> : <LaUne/>}
-      <Text>{selectedBox }</Text>
     </>)
 }
 

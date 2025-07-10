@@ -18,7 +18,7 @@ interface Article {
     urlToImage: string;
     publishedAt:string;
     author:string;
-    index:number;
+    id:number;
     content:string;
   }
   
@@ -59,7 +59,7 @@ const LaUne = () => {
                                 title:items.title,
                                 publishedAt:items.publishedAt,
                                 category:items.author,
-                                index:index,
+                                id:index,
                                 content:items.content,
                                 description:items.description
                             }
@@ -95,7 +95,7 @@ const LaUne = () => {
                                     title:items.title,
                                     publishedAt:items.publishedAt,
                                     category:items.author,
-                                    index:index,
+                                    id:index,
                                     content:items.content,
                                 }
                             })} >         
@@ -104,7 +104,7 @@ const LaUne = () => {
                                         publishedAt={items.publishedAt}
                                         category={items.author}
                                         description={items.description}
-                                        index={index}
+                                        id={index}
                                               
                                 />
                            </Pressable>  

@@ -3,16 +3,18 @@ import React,{useState} from 'react'
 import Styles from '@/styles/styles'
 import { Image } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
+import { useArticleContext } from '@/context/saveContext'
+
 
 
 
 interface infoInterface{
     urlToImage:string,
-    title: string;
+    title : string;
     publishedAt: string;
     category: string;
     description: string;
-    index: number;
+    id: number;
 }
 
 //formatage de la dates
@@ -30,16 +32,20 @@ interface infoInterface{
     
  };
 
-const ItemsBox:React.FC<infoInterface> = ({urlToImage,title,publishedAt,index}) => {
+const ItemsBox:React.FC<infoInterface> = ({id,urlToImage,title,publishedAt,}) => {
     const imageWidth = Dimensions.get('screen').width;
     //vaariable contanant la date
     const relativeDate = datePublication(publishedAt);
     const [saveIndice, setSaveIndice]= useState<number[]>([]);
-    const toggleSave = (index:number)=>{
-        setSaveIndice((prev)=> prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]);
-    }
-    const isSaved = saveIndice.includes(index);
+  const { addArticle, removeArticle, isSaved } = useArticleContext();
 
+  const toggleSave = () => {
+    if (isSaved(id)) {
+      removeArticle(id);
+    } else {
+      addArticle({id,title,urlToImage});
+    }
+  };
 
   return (
     <View style={Styles. itemsListBox}>
@@ -53,8 +59,8 @@ const ItemsBox:React.FC<infoInterface> = ({urlToImage,title,publishedAt,index}) 
             <View style={Styles.DateAnIconContainer}>
                 {/* date d'émission de l'article*/}
                 <Text style={{fontSize:12}} >publier {relativeDate}</Text>
-                <Pressable onPress={()=>toggleSave(index)}>
-                    {isSaved ? (<Ionicons name="bookmark" size={20} color="red"/>) : (<Ionicons name="bookmark-outline" size={20} color="#8c8b8b"/>)}
+                <Pressable onPress={toggleSave}>
+                    {isSaved(id) ? (<Ionicons name="bookmark" size={20} color="red"/>) : (<Ionicons name="bookmark-outline" size={20} color="#8c8b8b"/>)}
                     
                 </Pressable>
                 
