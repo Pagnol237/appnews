@@ -60,7 +60,7 @@ const Sport = () => {
                                 title:items.title,
                                 publishedAt:items.publishedAt,
                                 category:items.author,
-                                index:index,
+                                id:index,
                                 content:items.content,
                                 description:items.description
                             }
@@ -96,7 +96,7 @@ const Sport = () => {
                                     title:items.title,
                                     publishedAt:items.publishedAt,
                                     category:items.author,
-                                    index:index,
+                                    id:index,
                                     content:items.content,
                                 }
                             })} >         
@@ -105,7 +105,7 @@ const Sport = () => {
                                         publishedAt={items.publishedAt}
                                         category={items.author}
                                         description={items.description}
-                                        index={index}
+                                        id={index}
                                               
                                 />
                            </Pressable>  
