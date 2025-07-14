@@ -84,7 +84,7 @@ const Read:React.FC<infoInterface> = () => {
           </View>
          </View>
         <ScrollView style={{ flexGrow: 1,backgroundColor:'white',padding:20 }}>
-            <Text>{content} {'\n'}{description}{'\n'}
+            <Text style={{textAlign:'justify',color:'#4f4e4e'}}>{content} {'\n'}{description}{'\n'}
               Contrairement à la croyance populaire, le Lorem Ipsum n'est pas un simple texte aléatoire. Il trouve ses racines dans un texte de la littérature latine classique datant de 45 av. J.-C., ce qui lui confère plus de 2 000 ans. Richard McClintock, professeur de latin au Hampden-Sydney College en Virginie, a recherché l'un des mots latins les plus obscurs, consectetur, dans un passage du Lorem Ipsum. En parcourant les citations de ce mot dans la littérature classique, il a découvert sa source indubitable. Le Lorem Ipsum provient des sections 1.10.32 et 1.10.33 de « De Finibus Bonorum et Malorum » (Les Extrêmes du Bien et du Mal) de Cicéron, écrit en 45 av. J.-C. Ce livre est un traité sur la théorie de l'éthique, très populaire à la Renaissance. Le premier vers du Lorem Ipsum, « Lorem ipsum dolor sit amet… », provient d'un vers de la section 1.10.32.
               Le fragment standard du Lorem Ipsum utilisé depuis le XVIe siècle est reproduit ci-dessous pour les personnes intéressées. Les sections 1.10.32 et 1.10.33 du « De Finibus Bonorum et Malorum » de Cicéron sont également reproduites dans leur version originale exacte, accompagnées des versions anglaises de la traduction de 1914 de H. Rackham.
               {'\n'}{'\n'}

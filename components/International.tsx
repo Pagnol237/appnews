@@ -52,7 +52,15 @@ const International = () => {
             return(
                 <View key={index}>
                     {index===0?
-                        
+                        <MotiView 
+                            from={{translateX:-80,opacity:0}} 
+                             animate={{translateX:0,opacity:1}}
+                            transition={{
+                                type:'timing',
+                                duration:500,
+                                delay:100,
+                            }}
+                        >
                         <Pressable onPress={()=>router.navigate({
                             pathname:'/(tabs)/(home)/Read',
                             params:{
@@ -72,7 +80,8 @@ const International = () => {
                                 </LinearGradient>
                                 <Image source={{uri:items.urlToImage}} style={{width:imageWidth, height:imageWidth*0.7}} />
                             </View>
-                        </Pressable> 
+                        </Pressable>
+                        </MotiView>
                         :
                         <MotiView
                             from={{
@@ -86,7 +95,8 @@ const International = () => {
                             transition={{
                             repeatReverse: false,
                             type: 'timing',
-                            duration: 800,
+                            duration: 500,
+                            delay:100,
                             }}>
 
                             <Pressable onPress={()=>router.navigate({
