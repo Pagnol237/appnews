@@ -15,6 +15,7 @@ const Liste = () => {
             return(
               
                 <MotiView
+                    key={index}
                     from={{
                     translateY: -80,
                     opacity:0,
@@ -30,7 +31,7 @@ const Liste = () => {
                     delay:200
                     }}
                     >
-                      <View style={Styles. itemsListBox} key={index}>
+                      <View style={Styles. itemsListBox} >
                         <View style={Styles. itemsListBoxLeft}>
                               <Image source={{uri:item.urlToImage}} resizeMode='contain' style={{width:190, height:100}}/>
                         </View>
