@@ -28,8 +28,8 @@ const index = () => {
       <Main>
         {/* heaher qui contien le logo de l'appli , l'icône de la recherche et des réglages*/}
         <View style={Styles.headerBox}>
-          <View style={Styles.logoContainer}>
-            <Image source={require('@/assets/images/RCL.png')} style={{width:30, height:30}} />
+       <View style={Styles.logoContainer}>
+            { /*  <Image source={require('@/assets/images/RCL.png')} style={{width:30, height:30}} />*/}
           </View>
 
           <View style={Styles.researchContainer}>

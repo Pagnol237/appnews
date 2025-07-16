@@ -28,7 +28,6 @@ const Liste = () => {
                     repeatReverse: false,
                     type: 'timing',
                     duration: 500,
-                    delay:200
                     }}
                     >
                       <View style={Styles. itemsListBox} >
