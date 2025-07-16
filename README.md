@@ -8,8 +8,6 @@
   <img src="https://github.com/user-attachments/assets/d3e75420-a82d-4c3d-b4cb-9a7fa62b941f" alt="Image 1" style="width: 30%; height: auto;"/>  
 </div>
     AppNews est une application mobile de consultation d'actualités inspirée du design de l'application de Radio-Canada. Elle permet à l'utilisateur de :
-
- 
     - Lire les dernières actualités par catégorie
     - Ajouter des articles à ses favoris
     - Naviguer via un système d’onglets et de stack
